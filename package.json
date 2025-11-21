@@ -1,14 +1,22 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "moving-company-monorepo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "dev:quote": "npm run dev",
+    "build:quote": "npm run build",
+    "clean": "rm -rf node_modules apps/*/node_modules packages/*/node_modules",
+    "clean:build": "rm -rf dist apps/*/dist packages/*/dist"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
