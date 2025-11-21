@@ -28,20 +28,18 @@ function QuoteTypeSelector({
     <div className={className}>
       <div className={`grid grid-cols-1 sm:grid-cols-2 gap-6`}>
         <SelectableCard
-          id="detailed"
           title="Detailed Inventory"
           description="I'll provide a detailed list of all items to be moved"
-          IconComponent={List}
-          isSelected={data.quoteType === 'detailed'}
-          onSelect={() => handleCardClick('detailed')}
+          icon={List}
+          selected={data.quoteType === 'detailed'}
+          onClick={() => handleCardClick('detailed')}
         />
         <SelectableCard
-          id="quick"
           title="Quick Estimate"
           description="I'll provide basic details for a general estimate"
-          IconComponent={Zap}
-          isSelected={data.quoteType === 'quick'}
-          onSelect={() => handleCardClick('quick')}
+          icon={Zap}
+          selected={data.quoteType === 'quick'}
+          onClick={() => handleCardClick('quick')}
         />
       </div>
     </div>

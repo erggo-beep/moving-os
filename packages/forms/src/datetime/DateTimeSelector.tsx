@@ -100,20 +100,18 @@ function DateTimeSelector({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <SelectableCard
-              id="specific"
               title="Specific Time Slot"
               description="Choose a preferred start time"
-              IconComponent={Clock3}
-              isSelected={data.startTimePreference === 'specific'}
-              onSelect={() => handleChange('startTimePreference', 'specific')}
+              icon={Clock3}
+              selected={data.startTimePreference === 'specific'}
+              onClick={() => handleChange('startTimePreference', 'specific')}
             />
             <SelectableCard
-              id="flexible"
               title="Flexible Timing"
               description="Any time works for me"
-              IconComponent={Calendar}
-              isSelected={data.startTimePreference === 'flexible'}
-              onSelect={() => handleChange('startTimePreference', 'flexible')}
+              icon={Calendar}
+              selected={data.startTimePreference === 'flexible'}
+              onClick={() => handleChange('startTimePreference', 'flexible')}
             />
           </div>
 

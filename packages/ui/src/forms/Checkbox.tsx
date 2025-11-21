@@ -2,11 +2,12 @@
 interface CheckboxProps {
   checked: boolean;
   onChange: (checked: boolean) => void;
-  label?: string;
+  label?: string | React.ReactNode;
   description?: string;
   disabled?: boolean;
   className?: string;
   id?: string;
+  required?: boolean;
 }
 
 function Checkbox({

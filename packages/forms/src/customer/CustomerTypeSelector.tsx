@@ -28,20 +28,18 @@ function CustomerTypeSelector({
     <div className={className}>
       <div className={`grid grid-cols-1 sm:grid-cols-3 gap-6 ${compact ? 'sm:grid-cols-2' : ''}`}>
         <SelectableCard
-          id="private"
           title="Private Individual"
           description="Moving to or from a home"
-          IconComponent={Home}
-          isSelected={data.customerType === 'private'}
-          onSelect={() => handleCardClick('private')}
+          icon={Home}
+          selected={data.customerType === 'private'}
+          onClick={() => handleCardClick('private')}
         />
         <SelectableCard
-          id="business"
           title="Business"
           description="Office or commercial move"
-          IconComponent={Building2}
-          isSelected={data.customerType === 'business'}
-          onSelect={() => handleCardClick('business')}
+          icon={Building2}
+          selected={data.customerType === 'business'}
+          onClick={() => handleCardClick('business')}
         />
       </div>
     </div>

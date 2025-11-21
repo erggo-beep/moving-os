@@ -51,11 +51,10 @@ function InventorySelector({
     <div className={className}>
       <div className="space-y-8">
         {!compact && (
-          <InfoCard
-            title="Inventory Selection"
-            description="Select the items you'll be moving. You can adjust quantities and add custom items."
-            variant="info"
-          />
+          <InfoCard>
+            <p className="font-semibold">Inventory Selection</p>
+            <p className="mt-1">Select the items you'll be moving. You can adjust quantities and add custom items.</p>
+          </InfoCard>
         )}
 
         <div className="bg-gray-50 rounded-lg p-4">
