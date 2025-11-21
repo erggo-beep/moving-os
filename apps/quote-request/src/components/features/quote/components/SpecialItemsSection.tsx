@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Package, X, Plus, LucideIcon } from 'lucide-react';
-import Tooltip from '../../../ui/overlay/Tooltip';
+import { Tooltip } from '@moving-company/ui';
 import NavigationButtons from './NavigationButtons';
 import AddFragileItemModal from './AddFragileItemModal';
 import { FragileItem } from '../QuoteWizard';

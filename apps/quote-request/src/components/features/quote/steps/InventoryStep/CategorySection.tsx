@@ -1,4 +1,4 @@
-import SelectableCard from '../../../../ui/data-display/SelectableCard';
+import { SelectableCard } from '@moving-company/ui';
 import type { Item } from '../../../../../data/itemCategories';
 
 interface CategorySectionProps {

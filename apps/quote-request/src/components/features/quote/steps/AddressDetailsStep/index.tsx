@@ -1,5 +1,5 @@
 import NavigationButtons from '../../components/NavigationButtons';
-import AddItemCard from '../../../../ui/data-display/AddItemCard';
+import { AddItemCard } from '@moving-company/ui';
 import AddressSection from './AddressSection';
 import PropertySection from './PropertySection';
 import AccessSection from './AccessSection';

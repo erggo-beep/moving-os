@@ -1,4 +1,4 @@
-import Modal from '../../../ui/overlay/Modal';
+import { Modal } from '@moving-company/ui';
 import UnifiedCustomItemForm, { UnifiedCustomItemFormData } from './UnifiedCustomItemForm';
 import type { Item } from '../../../../data/itemCategories';
 

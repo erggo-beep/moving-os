@@ -1,9 +1,9 @@
 import { Building2, Home, HomeIcon, Warehouse, Package, ArrowUp, User, Ban, Ruler } from 'lucide-react';
-import Tooltip from '../../../../ui/overlay/Tooltip';
-import SelectableCard from '../../../../ui/data-display/SelectableCard';
-import SelectDropdown from '../../../../ui/forms/SelectDropdown';
-import TextInput from '../../../../ui/forms/TextInput';
-import Checkbox from '../../../../ui/forms/Checkbox';
+import { Tooltip } from '@moving-company/ui';
+import { SelectableCard } from '@moving-company/ui';
+import { SelectDropdown } from '@moving-company/ui';
+import { TextInput } from '@moving-company/ui';
+import { Checkbox } from '@moving-company/ui';
 
 interface PropertyData {
   propertyType: string;

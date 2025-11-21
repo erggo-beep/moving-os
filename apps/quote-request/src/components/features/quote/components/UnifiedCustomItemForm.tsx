@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import TextInput from '../../../ui/forms/TextInput';
-import Checkbox from '../../../ui/forms/Checkbox';
-import Button from '../../../ui/buttons/Button';
+import { TextInput } from '@moving-company/ui';
+import { Checkbox } from '@moving-company/ui';
+import { Button } from '@moving-company/ui';
 
 export interface UnifiedCustomItemFormData {
   name: string;

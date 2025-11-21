@@ -1,7 +1,7 @@
 import { UserPlus, UserCheck } from 'lucide-react';
-import Tooltip from '../../../ui/overlay/Tooltip';
+import { Tooltip } from '@moving-company/ui';
 import NavigationButtons from '../components/NavigationButtons';
-import TextInput from '../../../ui/forms/TextInput';
+import { TextInput } from '@moving-company/ui';
 
 interface ContactDetailsData {
   customerType: string;

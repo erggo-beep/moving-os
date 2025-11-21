@@ -1,15 +1,5 @@
 import { Shield, Plug, Package, Gift, Wrench, Droplets, Hammer, Lightbulb, Tv, FileCheck, Sparkles, Recycle } from 'lucide-react';
-
-export interface Service {
-  id: string;
-  name: string;
-  description: string;
-  IconComponent: React.ComponentType<{ className?: string }>;
-  included?: boolean;
-  category: string;
-  price?: string;
-  priceSubtext?: string;
-}
+import type { Service } from '@moving-company/types';
 
 export const services: Service[] = [
   {

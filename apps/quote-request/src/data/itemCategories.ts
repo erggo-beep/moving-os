@@ -1,21 +1,7 @@
 import { Package, Trash2, Briefcase, Armchair, CircleDot, Bed, Table2, MonitorDown, BookOpen, Shirt, Grid3x3, Tv, Bike, Flower2, Flame, Lamp, Lightbulb, Layers } from 'lucide-react';
+import type { Item, ItemCategory } from '@moving-company/types';
 
-export interface Item {
-  id: string;
-  name: string;
-  description: string;
-  volume: number;
-  IconComponent: React.ComponentType<{ className?: string }>;
-  isCustom?: boolean;
-  details?: string;
-  dimensions?: {
-    width: number;
-    length: number;
-    height: number;
-  };
-}
-
-export const itemCategories: Record<string, Item[]> = {
+export const itemCategories: ItemCategory = {
   'Small Items': [
     { id: 'moving-box', name: 'Moving Box', description: '60L capacity', volume: 0.08, IconComponent: Package },
     { id: 'trash-bag', name: 'Trash Bag', description: '100L', volume: 0.05, IconComponent: Trash2 },

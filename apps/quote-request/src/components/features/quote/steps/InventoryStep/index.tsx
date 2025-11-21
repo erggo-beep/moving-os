@@ -1,13 +1,13 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Package } from 'lucide-react';
-import Tooltip from '../../../../ui/overlay/Tooltip';
+import { Tooltip } from '@moving-company/ui';
 import NavigationButtons from '../../components/NavigationButtons';
 import CategoryNavigation from './CategoryNavigation';
 import CategorySection from './CategorySection';
 import CustomItemsSection from './CustomItemsSection';
 import VolumeSummary from './VolumeSummary';
 import MobileBottomSheet from './MobileBottomSheet';
-import InfoCard from '../../../../ui/data-display/InfoCard';
+import { InfoCard } from '@moving-company/ui';
 import { itemCategories, type Item } from '../../../../../data/itemCategories';
 import type { CustomItemFormData } from '../../components/AddCustomItemModal';
 

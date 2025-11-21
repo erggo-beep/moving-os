@@ -1,5 +1,5 @@
 import { MapPin } from 'lucide-react';
-import TextInput from '../../../../ui/forms/TextInput';
+import { TextInput } from '@moving-company/ui';
 
 interface AddressData {
   streetAddress: string;

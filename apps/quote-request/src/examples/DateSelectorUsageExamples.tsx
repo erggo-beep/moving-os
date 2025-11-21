@@ -8,7 +8,7 @@
 
 import { useState } from 'react';
 import DateSelector, { type DateStatus } from '../components/features/quote/components/DateSelector';
-import { isWeekend, isBeforeToday } from '../utils/helpers/dateHelpers';
+import { isWeekend, isBeforeToday } from '@moving-company/utils';
 
 /**
  * EXAMPLE 1: Moving Date Selection (Current Implementation)

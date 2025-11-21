@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Pencil, Package, Plus } from 'lucide-react';
-import SelectableCard from '../../../../ui/data-display/SelectableCard';
+import { SelectableCard } from '@moving-company/ui';
 import AddCustomItemModal, { CustomItemFormData } from '../../components/AddCustomItemModal';
-import ConfirmationDialog from '../../../../ui/overlay/ConfirmationDialog';
+import { ConfirmationDialog } from '@moving-company/ui';
 import type { Item } from '../../../../../data/itemCategories';
 
 interface CustomItemsSectionProps {

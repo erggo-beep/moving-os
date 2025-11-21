@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import BottomSheet from '../../../../ui/overlay/BottomSheet';
+import { BottomSheet } from '@moving-company/ui';
 
 interface MobileBottomSheetProps {
   totalVolume: string;

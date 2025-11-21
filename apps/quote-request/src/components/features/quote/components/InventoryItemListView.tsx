@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
-import Button from '../../../ui/buttons/Button';
+import { Button } from '@moving-company/ui';
 import { itemCategories, type Item } from '../../../../data/itemCategories';
 
 interface InventoryItemListViewProps {

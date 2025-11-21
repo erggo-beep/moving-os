@@ -1,5 +1,5 @@
 import { Home, Building2, Zap, Edit3, Shield } from 'lucide-react';
-import SelectableCard from '../../../ui/data-display/SelectableCard';
+import { SelectableCard } from '@moving-company/ui';
 import NavigationButtons from '../components/NavigationButtons';
 
 interface CustomerTypeData {

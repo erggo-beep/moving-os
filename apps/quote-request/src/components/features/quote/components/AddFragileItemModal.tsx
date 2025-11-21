@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
-import Modal from '../../../ui/overlay/Modal';
+import { Modal } from '@moving-company/ui';
 import FragileItemSelectionMode from './FragileItemSelectionMode';
 import InventoryItemListView from './InventoryItemListView';
 import CustomFragileItemForm, { CustomFragileItemData } from './CustomFragileItemForm';

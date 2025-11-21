@@ -1,8 +1,8 @@
 import { Truck, Footprints } from 'lucide-react';
-import Tooltip from '../../../../ui/overlay/Tooltip';
-import SelectableCard from '../../../../ui/data-display/SelectableCard';
-import TextInput from '../../../../ui/forms/TextInput';
-import TextArea from '../../../../ui/forms/TextArea';
+import { Tooltip } from '@moving-company/ui';
+import { SelectableCard } from '@moving-company/ui';
+import { TextInput } from '@moving-company/ui';
+import { TextArea } from '@moving-company/ui';
 
 interface AccessData {
   access: string;

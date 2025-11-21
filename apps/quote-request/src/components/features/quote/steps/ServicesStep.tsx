@@ -1,6 +1,6 @@
 import { ListChecks } from 'lucide-react';
-import Tooltip from '../../../ui/overlay/Tooltip';
-import SelectableCard from '../../../ui/data-display/SelectableCard';
+import { Tooltip } from '@moving-company/ui';
+import { SelectableCard } from '@moving-company/ui';
 import NavigationButtons from '../components/NavigationButtons';
 import { services, type Service } from '../../../../data/services';
 
