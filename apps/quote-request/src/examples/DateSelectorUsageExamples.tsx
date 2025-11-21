@@ -7,7 +7,7 @@
  */
 
 import { useState } from 'react';
-import DateSelector, { type DateStatus } from '../components/features/quote/components/DateSelector';
+import DateSelector, { type DateStatus } from '../components/features/quote-wizard/steps/date-time/DateSelector';
 import { isWeekend, isBeforeToday } from '@moving-company/utils';
 
 /**

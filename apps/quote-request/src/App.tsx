@@ -1,4 +1,4 @@
-import QuoteWizard from './components/features/quote/QuoteWizard';
+import QuoteWizard from './components/features/quote-wizard/QuoteWizard';
 
 function App() {
   return <QuoteWizard />;
