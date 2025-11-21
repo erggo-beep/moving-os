@@ -68,8 +68,10 @@ export interface FragileItem {
 
 export interface FragileItemsFormData {
   fragileItems: FragileItem[];
+  fragileItemsDetails?: string;
 }
 
 export interface HeavyItemsFormData {
   heavyItems: FragileItem[];
+  heavyItemsDetails?: string;
 }

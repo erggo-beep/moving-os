@@ -5,3 +5,6 @@ export { default as QuoteTypeSelector } from './quote-type/QuoteTypeSelector';
 export { default as ServicesSelector } from './services/ServicesSelector';
 export { default as DateTimeSelector } from './datetime/DateTimeSelector';
 export { default as InventorySelector } from './inventory/InventorySelector';
+export { default as FragileItemsForm } from './special-items/FragileItemsForm';
+export { default as HeavyItemsForm } from './special-items/HeavyItemsForm';
+export { default as SpecialItemsForm } from './special-items/SpecialItemsForm';
