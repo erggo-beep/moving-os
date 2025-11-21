@@ -1,23 +1,15 @@
-import { Home, Building2, Zap, Edit3, Shield } from 'lucide-react';
-import { SelectableCard } from '@moving-company/ui';
+import { Zap, Edit3, Shield } from 'lucide-react';
 import NavigationButtons from '../components/NavigationButtons';
-
-interface CustomerTypeData {
-  customerType: string;
-}
+import { CustomerTypeSelector } from '@moving-company/forms';
+import type { CustomerTypeFormData } from '@moving-company/types';
 
 interface CustomerTypeSelectionProps {
-  data: CustomerTypeData;
-  onUpdate: (data: CustomerTypeData) => void;
+  data: CustomerTypeFormData;
+  onUpdate: (data: CustomerTypeFormData) => void;
   onNext: () => void;
 }
 
 function CustomerTypeStep({ data, onUpdate, onNext }: CustomerTypeSelectionProps) {
-  const handleCardClick = (type: string) => {
-    onUpdate({ customerType: type });
-    onNext();
-  };
-
   return (
     <div>
       <div className="text-center mb-12">
@@ -66,22 +58,7 @@ function CustomerTypeStep({ data, onUpdate, onNext }: CustomerTypeSelectionProps
 
       <div>
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Select Customer Type</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <SelectableCard
-            icon={Home}
-            title="Private Customer"
-            description="Moving your personal belongings or household items to a new residence."
-            selected={data.customerType === 'private'}
-            onClick={() => handleCardClick('private')}
-          />
-          <SelectableCard
-            icon={Building2}
-            title="Corporate Customer"
-            description="Relocating office equipment, furniture, or business assets for your company."
-            selected={data.customerType === 'corporate'}
-            onClick={() => handleCardClick('corporate')}
-          />
-        </div>
+        <CustomerTypeSelector data={data} onChange={onUpdate} onSelect={onNext} />
       </div>
 
       <NavigationButtons

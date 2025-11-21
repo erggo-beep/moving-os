@@ -1,30 +1,13 @@
 import NavigationButtons from '../../components/NavigationButtons';
 import { AddItemCard } from '@moving-company/ui';
-import AddressSection from './AddressSection';
-import PropertySection from './PropertySection';
-import AccessSection from './AccessSection';
-
-interface AddressData {
-  streetAddress: string;
-  city: string;
-  state: string;
-  zipCode: string;
-  propertyType: string;
-  squareMeters: string;
-  squareMetersNotApplicable: boolean;
-  floor: string;
-  multipleFloors: boolean;
-  elevator: string;
-  access: string;
-  walkingDistance: string;
-  additionalDetails: string;
-}
+import { AddressEditForm } from '@moving-company/forms';
+import type { AddressFormData } from '@moving-company/types';
 
 interface AddressEntryProps {
   title: string;
   subtitle: string;
-  data: AddressData;
-  onUpdate: (data: AddressData) => void;
+  data: AddressFormData;
+  onUpdate: (data: AddressFormData) => void;
   onNext: () => void;
   onPrevious?: () => void;
   onAddAnother?: () => void;
@@ -43,20 +26,12 @@ function AddressDetailsStep({
   showAddAnother,
   addressType,
 }: AddressEntryProps) {
-  const handleChange = (field: string, value: any) => {
-    onUpdate({ ...data, [field]: value });
-  };
-
   return (
     <div>
       <h2 className="text-3xl font-bold text-gray-900 mb-2">{title}</h2>
       <p className="text-gray-600 mb-8">{subtitle}</p>
 
-      <div className="space-y-10">
-        <AddressSection data={data} onChange={handleChange} />
-        <PropertySection data={data} onChange={handleChange} />
-        <AccessSection data={data} onChange={handleChange} />
-      </div>
+      <AddressEditForm data={data} onChange={onUpdate} />
 
       {showAddAnother && onAddAnother && (
         <AddItemCard onClick={onAddAnother} addressType={addressType} />
