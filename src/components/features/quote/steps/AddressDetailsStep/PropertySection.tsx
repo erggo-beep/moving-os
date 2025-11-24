@@ -1,7 +1,9 @@
-import { Building2, Home, HomeIcon, Warehouse, Package, ArrowUp, User, Ban, Ruler, X } from 'lucide-react';
+import { Building2, Home, HomeIcon, Warehouse, Package, ArrowUp, User, Ban, Ruler } from 'lucide-react';
 import Tooltip from '../../../../ui/overlay/Tooltip';
 import SelectableCard from '../../../../ui/data-display/SelectableCard';
 import SelectDropdown from '../../../../ui/forms/SelectDropdown';
+import TextInput from '../../../../ui/forms/TextInput';
+import Checkbox from '../../../../ui/forms/Checkbox';
 
 interface PropertyData {
   propertyType: string;
@@ -127,28 +129,16 @@ function PropertySection({ data, onChange }: PropertySectionProps) {
         )}
 
         <div>
-          <div className="flex items-center gap-1.5 mb-2">
+          <div className="flex items-center gap-1.5 mb-3">
             <label className="block text-sm font-semibold text-gray-900">
               Apartment Size
             </label>
             <Tooltip text="Enter the approximate size or select 'Not Applicable' if you're only moving a few items. This helps us estimate the move duration." />
           </div>
-          <p className="text-sm text-gray-600 mb-4">
-            Choose one of the options below
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <SelectableCard
-              icon={Ruler}
-              title="Enter Apartment Size"
-              description="Enter approximate size of the property"
-              selected={!!data.squareMeters && !data.squareMetersNotApplicable}
-              onClick={() => {
-                if (data.squareMetersNotApplicable) {
-                  onChange('squareMetersNotApplicable', false);
-                }
-              }}
-            >
-              <div className="relative mt-3">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="flex-1 w-full sm:w-auto">
+              <div className="relative">
+                <Ruler className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
                 <input
                   type="number"
                   value={data.squareMeters}
@@ -158,26 +148,32 @@ function PropertySection({ data, onChange }: PropertySectionProps) {
                       onChange('squareMetersNotApplicable', false);
                     }
                   }}
-                  onClick={(e) => e.stopPropagation()}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white"
+                  disabled={data.squareMetersNotApplicable}
+                  min="0"
+                  className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
                   placeholder="Enter size"
                 />
                 <span className="absolute right-4 top-3 text-gray-500">m²</span>
               </div>
-            </SelectableCard>
+            </div>
 
-            <SelectableCard
-              icon={X}
-              title="Size Not Applicable"
-              description="The apartment size doesn't describe my move accurately. e.g., moving only a single item or a small portion of belongings"
-              selected={data.squareMetersNotApplicable}
-              onClick={() => {
-                onChange('squareMetersNotApplicable', !data.squareMetersNotApplicable);
-                if (!data.squareMetersNotApplicable) {
-                  onChange('squareMeters', '');
-                }
-              }}
-            />
+            <span className="text-sm font-medium text-gray-500 self-center">or</span>
+
+            <div className="flex items-start">
+              <Checkbox
+                checked={data.squareMetersNotApplicable}
+                onChange={(checked) => {
+                  onChange('squareMetersNotApplicable', checked);
+                  if (checked) {
+                    onChange('squareMeters', '');
+                  }
+                }}
+                label="Size not applicable"
+              />
+              <div className="ml-1 mt-0.5">
+                <Tooltip text="Check this if you're only moving a few items or a small portion of belongings, where apartment size doesn't accurately describe your move." />
+              </div>
+            </div>
           </div>
         </div>
       </div>
