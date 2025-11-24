@@ -14,11 +14,9 @@ interface HeavyItemsData {
 interface HeavyItemsSelectionProps {
   data: HeavyItemsData;
   onUpdate: (data: HeavyItemsData) => void;
-  onNext: () => void;
-  onPrevious: () => void;
 }
 
-function HeavyItemsStep({ data, onUpdate, onNext, onPrevious }: HeavyItemsSelectionProps) {
+function HeavyItemsStep({ data, onUpdate }: HeavyItemsSelectionProps) {
   const handleUpdateItems = (items: FragileItem[]) => {
     onUpdate({ ...data, heavyItems: items });
   };
@@ -41,11 +39,8 @@ function HeavyItemsStep({ data, onUpdate, onNext, onPrevious }: HeavyItemsSelect
       borderColor="border-orange-600"
       bgColor="bg-orange-50"
       textColor="text-orange-700"
-      iconColor="text-orange-600"
       onUpdateItems={handleUpdateItems}
       onUpdateDetails={handleUpdateDetails}
-      onNext={onNext}
-      onPrevious={onPrevious}
     />
   );
 }

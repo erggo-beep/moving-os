@@ -1,7 +1,6 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Package } from 'lucide-react';
 import Tooltip from '../../../../ui/overlay/Tooltip';
-import NavigationButtons from '../../components/NavigationButtons';
 import CategoryNavigation from './CategoryNavigation';
 import CategorySection from './CategorySection';
 import CustomItemsSection from './CustomItemsSection';
@@ -31,11 +30,9 @@ interface InventoryData {
 interface InventorySelectionProps {
   data: InventoryData;
   onUpdate: (data: InventoryData) => void;
-  onNext: () => void;
-  onPrevious: () => void;
 }
 
-function InventoryStep({ data, onUpdate, onNext, onPrevious }: InventorySelectionProps) {
+function InventoryStep({ data, onUpdate }: InventorySelectionProps) {
   const [activeCategory, setActiveCategory] = useState('category-small-items');
   const [showMobileSheet, setShowMobileSheet] = useState(true);
   const [customItems, setCustomItems] = useState<Item[]>([]);
@@ -283,10 +280,6 @@ function InventoryStep({ data, onUpdate, onNext, onPrevious }: InventorySelectio
             selectedItems={selectedItems}
           />
         </div>
-      </div>
-
-      <div className="pb-24 lg:pb-0">
-        <NavigationButtons onPrevious={onPrevious} onNext={onNext} />
       </div>
 
       {showMobileSheet && (

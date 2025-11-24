@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Package, X, Plus, LucideIcon } from 'lucide-react';
+import { Package, X, Plus } from 'lucide-react';
 import Tooltip from '../../../ui/overlay/Tooltip';
-import NavigationButtons from './NavigationButtons';
 import AddFragileItemModal from './AddFragileItemModal';
 import { FragileItem } from '../QuoteWizard';
 import { itemCategories } from '../../../../data/itemCategories';
@@ -20,11 +19,8 @@ interface SpecialItemsSectionProps {
   borderColor: string;
   bgColor: string;
   textColor: string;
-  iconColor: string;
   onUpdateItems: (items: FragileItem[]) => void;
   onUpdateDetails: (details: string) => void;
-  onNext: () => void;
-  onPrevious: () => void;
 }
 
 function SpecialItemsSection({
@@ -40,11 +36,8 @@ function SpecialItemsSection({
   borderColor,
   bgColor,
   textColor,
-  iconColor,
   onUpdateItems,
   onUpdateDetails,
-  onNext,
-  onPrevious,
 }: SpecialItemsSectionProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -101,7 +94,7 @@ function SpecialItemsSection({
     onUpdateDetails(value);
   };
 
-  const getItemIcon = (item: FragileItem): LucideIcon => {
+  const getItemIcon = (item: FragileItem) => {
     if (item.sourceItemId) {
       for (const categoryItems of Object.values(itemCategories)) {
         const found = categoryItems.find((i) => i.id === item.sourceItemId);
@@ -167,8 +160,6 @@ function SpecialItemsSection({
           placeholder={detailsPlaceholder}
         />
       </div>
-
-      <NavigationButtons onPrevious={onPrevious} onNext={onNext} />
 
       <AddFragileItemModal
         isOpen={isModalOpen}

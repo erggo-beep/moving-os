@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Tooltip from '../../../ui/overlay/Tooltip';
 import DateSelector from '../components/DateSelector';
 import SelectableCard from '../../../ui/data-display/SelectableCard';
-import NavigationButtons from '../components/NavigationButtons';
 import { isWeekend, isBeforeToday, formatDateDisplay } from '../../../../utils/helpers/dateHelpers';
 
 interface MovingDateTimeData {
@@ -17,11 +16,9 @@ interface MovingDateTimeData {
 interface MovingDateTimeSelectionProps {
   data: MovingDateTimeData;
   onUpdate: (data: MovingDateTimeData) => void;
-  onNext: () => void;
-  onPrevious: () => void;
 }
 
-function MovingDateTimeStep({ data, onUpdate, onNext, onPrevious }: MovingDateTimeSelectionProps) {
+function MovingDateTimeStep({ data, onUpdate }: MovingDateTimeSelectionProps) {
   const [isDateSelectorOpen, setIsDateSelectorOpen] = useState(false);
 
   const handleChange = (field: string, value: any) => {
@@ -224,8 +221,6 @@ function MovingDateTimeStep({ data, onUpdate, onNext, onPrevious }: MovingDateTi
           </div>
         )}
       </div>
-
-      <NavigationButtons onPrevious={onPrevious} onNext={onNext} />
     </div>
   );
 }

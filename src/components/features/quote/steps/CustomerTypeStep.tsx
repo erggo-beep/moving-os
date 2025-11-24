@@ -1,6 +1,5 @@
 import { Home, Building2, Zap, Edit3, Shield } from 'lucide-react';
 import SelectableCard from '../../../ui/data-display/SelectableCard';
-import NavigationButtons from '../components/NavigationButtons';
 
 interface CustomerTypeData {
   customerType: string;
@@ -9,13 +8,11 @@ interface CustomerTypeData {
 interface CustomerTypeSelectionProps {
   data: CustomerTypeData;
   onUpdate: (data: CustomerTypeData) => void;
-  onNext: () => void;
 }
 
-function CustomerTypeStep({ data, onUpdate, onNext }: CustomerTypeSelectionProps) {
+function CustomerTypeStep({ data, onUpdate }: CustomerTypeSelectionProps) {
   const handleCardClick = (type: string) => {
     onUpdate({ customerType: type });
-    onNext();
   };
 
   return (
@@ -83,12 +80,6 @@ function CustomerTypeStep({ data, onUpdate, onNext }: CustomerTypeSelectionProps
           />
         </div>
       </div>
-
-      <NavigationButtons
-        onNext={onNext}
-        showNext={!!data.customerType}
-        isFirstPage={true}
-      />
     </div>
   );
 }

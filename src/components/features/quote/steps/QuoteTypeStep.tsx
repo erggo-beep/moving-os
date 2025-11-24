@@ -1,6 +1,5 @@
 import { List, Zap } from 'lucide-react';
 import SelectableCard from '../../../ui/data-display/SelectableCard';
-import NavigationButtons from '../components/NavigationButtons';
 
 interface QuoteTypeData {
   quoteType: string;
@@ -9,14 +8,11 @@ interface QuoteTypeData {
 interface QuoteTypeSelectionProps {
   data: QuoteTypeData;
   onUpdate: (data: QuoteTypeData) => void;
-  onSelect: () => void;
-  onPrevious: () => void;
 }
 
-function QuoteTypeStep({ data, onUpdate, onSelect, onPrevious }: QuoteTypeSelectionProps) {
+function QuoteTypeStep({ data, onUpdate }: QuoteTypeSelectionProps) {
   const handleCardClick = (type: string) => {
     onUpdate({ quoteType: type });
-    onSelect();
   };
 
   return (
@@ -45,12 +41,6 @@ function QuoteTypeStep({ data, onUpdate, onSelect, onPrevious }: QuoteTypeSelect
           onClick={() => handleCardClick('estimated')}
         />
       </div>
-
-      <NavigationButtons
-        onPrevious={onPrevious}
-        onNext={onSelect}
-        showNext={!!data.quoteType}
-      />
     </div>
   );
 }

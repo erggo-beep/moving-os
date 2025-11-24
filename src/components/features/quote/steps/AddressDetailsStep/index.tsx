@@ -1,5 +1,3 @@
-import NavigationButtons from '../../components/NavigationButtons';
-import AddItemCard from '../../../../ui/data-display/AddItemCard';
 import AddressSection from './AddressSection';
 import PropertySection from './PropertySection';
 import AccessSection from './AccessSection';
@@ -25,11 +23,6 @@ interface AddressEntryProps {
   subtitle: string;
   data: AddressData;
   onUpdate: (data: AddressData) => void;
-  onNext: () => void;
-  onPrevious?: () => void;
-  onAddAnother?: () => void;
-  showAddAnother?: boolean;
-  addressType?: 'pickup' | 'dropoff';
 }
 
 function AddressDetailsStep({
@@ -37,11 +30,6 @@ function AddressDetailsStep({
   subtitle,
   data,
   onUpdate,
-  onNext,
-  onPrevious,
-  onAddAnother,
-  showAddAnother,
-  addressType,
 }: AddressEntryProps) {
   const handleChange = (field: string, value: any) => {
     onUpdate({ ...data, [field]: value });
@@ -57,16 +45,6 @@ function AddressDetailsStep({
         <PropertySection data={data} onChange={handleChange} />
         <AccessSection data={data} onChange={handleChange} />
       </div>
-
-      {showAddAnother && onAddAnother && (
-        <AddItemCard onClick={onAddAnother} addressType={addressType} />
-      )}
-
-      <NavigationButtons
-        onPrevious={onPrevious}
-        onNext={onNext}
-        isFirstPage={!onPrevious}
-      />
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import { UserPlus, UserCheck } from 'lucide-react';
 import Tooltip from '../../../ui/overlay/Tooltip';
-import NavigationButtons from '../components/NavigationButtons';
 import TextInput from '../../../ui/forms/TextInput';
 
 interface ContactDetailsData {
@@ -20,17 +19,11 @@ interface ContactDetailsData {
 interface ContactDetailsEntryProps {
   data: ContactDetailsData;
   onUpdate: (data: ContactDetailsData) => void;
-  onPrevious: () => void;
 }
 
-function ContactDetailsStep({ data, onUpdate, onPrevious }: ContactDetailsEntryProps) {
+function ContactDetailsStep({ data, onUpdate }: ContactDetailsEntryProps) {
   const handleChange = (field: string, value: any) => {
     onUpdate({ ...data, [field]: value });
-  };
-
-  const handleSubmit = () => {
-    console.log('Form submitted:', data);
-    alert('Quote request submitted successfully!');
   };
 
   return (
@@ -231,12 +224,6 @@ function ContactDetailsStep({ data, onUpdate, onPrevious }: ContactDetailsEntryP
           </div>
         </div>
       </div>
-
-      <NavigationButtons
-        onPrevious={onPrevious}
-        onNext={handleSubmit}
-        isLastPage={true}
-      />
     </div>
   );
 }

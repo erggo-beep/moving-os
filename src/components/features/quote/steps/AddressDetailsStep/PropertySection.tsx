@@ -2,7 +2,6 @@ import { Building2, Home, HomeIcon, Warehouse, Package, ArrowUp, User, Ban, Rule
 import Tooltip from '../../../../ui/overlay/Tooltip';
 import SelectableCard from '../../../../ui/data-display/SelectableCard';
 import SelectDropdown from '../../../../ui/forms/SelectDropdown';
-import TextInput from '../../../../ui/forms/TextInput';
 import Checkbox from '../../../../ui/forms/Checkbox';
 
 interface PropertyData {

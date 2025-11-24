@@ -10,6 +10,7 @@ interface TextInputProps {
   icon?: React.ComponentType<{ className?: string }>;
   disabled?: boolean;
   min?: string | number;
+  step?: string | number;
   className?: string;
 }
 
@@ -23,6 +24,7 @@ function TextInput({
   icon: IconComponent,
   disabled = false,
   min,
+  step,
   className = '',
 }: TextInputProps) {
   return (
@@ -43,6 +45,7 @@ function TextInput({
           placeholder={placeholder}
           disabled={disabled}
           min={min}
+          step={step}
           className={`w-full ${IconComponent ? 'pl-10' : 'pl-4'} pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed ${className}`}
         />
       </div>

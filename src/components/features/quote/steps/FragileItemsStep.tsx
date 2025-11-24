@@ -12,11 +12,9 @@ interface FragileItemsData {
 interface FragileItemsSelectionProps {
   data: FragileItemsData;
   onUpdate: (data: FragileItemsData) => void;
-  onNext: () => void;
-  onPrevious: () => void;
 }
 
-function FragileItemsStep({ data, onUpdate, onNext, onPrevious }: FragileItemsSelectionProps) {
+function FragileItemsStep({ data, onUpdate }: FragileItemsSelectionProps) {
   const handleUpdateItems = (items: FragileItem[]) => {
     onUpdate({ ...data, fragileItems: items });
   };
@@ -39,11 +37,8 @@ function FragileItemsStep({ data, onUpdate, onNext, onPrevious }: FragileItemsSe
       borderColor="border-red-600"
       bgColor="bg-red-50"
       textColor="text-red-700"
-      iconColor="text-red-600"
       onUpdateItems={handleUpdateItems}
       onUpdateDetails={handleUpdateDetails}
-      onNext={onNext}
-      onPrevious={onPrevious}
     />
   );
 }

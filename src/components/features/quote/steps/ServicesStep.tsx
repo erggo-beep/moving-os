@@ -1,7 +1,6 @@
 import { ListChecks } from 'lucide-react';
 import Tooltip from '../../../ui/overlay/Tooltip';
 import SelectableCard from '../../../ui/data-display/SelectableCard';
-import NavigationButtons from '../components/NavigationButtons';
 import { services, type Service } from '../../../../data/services';
 
 interface ServicesData {
@@ -11,11 +10,9 @@ interface ServicesData {
 interface AdditionalServicesSelectionProps {
   data: ServicesData;
   onUpdate: (data: ServicesData) => void;
-  onNext: () => void;
-  onPrevious: () => void;
 }
 
-function ServicesStep({ data, onUpdate, onNext, onPrevious }: AdditionalServicesSelectionProps) {
+function ServicesStep({ data, onUpdate }: AdditionalServicesSelectionProps) {
   const toggleService = (serviceId: string) => {
     const newServices = data.services.includes(serviceId)
       ? data.services.filter((id) => id !== serviceId)
@@ -151,8 +148,6 @@ function ServicesStep({ data, onUpdate, onNext, onPrevious }: AdditionalServices
           </div>
         </div>
       </div>
-
-      <NavigationButtons onPrevious={onPrevious} onNext={onNext} />
     </div>
   );
 }
